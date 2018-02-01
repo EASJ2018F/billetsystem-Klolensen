@@ -59,6 +59,7 @@
     <Compile Include="BilTests.cs" />
     <Compile Include="MCTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TicketTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

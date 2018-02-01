@@ -6,35 +6,18 @@ using System.Threading.Tasks;
 
 namespace BilletLib
 {
-    public class MC
+    public class MC : Vehicle
     {
-        private string _nummerplade;
-        private DateTime _dato;
-
-        public MC(string nummerplade, DateTime dato)
+        public MC(string nummerplade, DateTime dato) : base(nummerplade, dato)
         {
-            _nummerplade = nummerplade;
-            _dato = dato;
         }
-
-        public string Nummerplade
-        {
-            get { return _nummerplade; }
-            set { _nummerplade = value; }
-        }
-
-        public DateTime Dato
-        {
-            get { return _dato; }
-            set { _dato = value; }
-        }
-
-        public int Pris()
+        
+        public override int Pris()
         {
             return 125;
         }
 
-        public string Køretøj()
+        public override string Køretøj()
         {
             return "MC";
         }

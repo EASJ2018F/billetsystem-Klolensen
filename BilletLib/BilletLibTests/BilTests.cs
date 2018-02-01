@@ -30,5 +30,12 @@ namespace BilletLib.Tests
 
             Assert.AreEqual("Bil", result);
         }
+
+        [TestMethod()]
+        [ExpectedException(typeof(ArgumentException))]
+        public void BilNummerpladeExceptionTest()
+        {
+            Bil bil = new Bil("12345678", new DateTime(1990, 3, 12));
+        }
     }
 }

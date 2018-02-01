@@ -30,5 +30,12 @@ namespace BilletLibTests
 
             Assert.AreEqual("MC", result);
         }
+
+        [TestMethod()]
+        [ExpectedException(typeof(ArgumentException))]
+        public void MCNummerpladeExceptionTest()
+        {
+            MC mc = new MC("12345678", new DateTime(1990, 3, 12));
+        }
     }
 }
