@@ -10,8 +10,9 @@ namespace BilletLib
     {
         private string _nummerplade;
         private DateTime _dato;
+        private bool _øresund;
 
-        public Vehicle(string nummerplade, DateTime dato)
+        public Vehicle(string nummerplade, DateTime dato, bool øresund)
         {
             if (nummerplade.Length <= 7)
             {
@@ -22,6 +23,7 @@ namespace BilletLib
                 throw new ArgumentException("Nummerplade har for mange tegn");
             }
             _dato = dato;
+            _øresund = øresund;
         }
 
         public string Nummerplade
@@ -34,6 +36,11 @@ namespace BilletLib
         {
             get { return _dato; }
             set { _dato = value; }
+        }
+        public bool Øresund
+        {
+            get { return _øresund; }
+            set { _øresund = value; }
         }
 
         public abstract int Pris();

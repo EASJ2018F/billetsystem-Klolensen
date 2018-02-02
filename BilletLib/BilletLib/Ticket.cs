@@ -28,7 +28,7 @@ namespace BilletLib
 
         public void WeekendDiscount()
         {
-            if (_vehicle.Dato.DayOfWeek == DayOfWeek.Saturday || _vehicle.Dato.DayOfWeek == DayOfWeek.Sunday && _vehicle.Køretøj() == "Bil")
+            if ((_vehicle.Dato.DayOfWeek == DayOfWeek.Saturday || _vehicle.Dato.DayOfWeek == DayOfWeek.Sunday) && _vehicle.Køretøj() == "Bil")
             {
                 _finalPrice = (int)(_finalPrice * 0.80);
             }
@@ -36,12 +36,20 @@ namespace BilletLib
 
         public void BroBizzDiscount( )
         {
-            if (_broBizz)
+            if (_broBizz && !_vehicle.Øresund)
             {
                 _finalPrice = (int)(_finalPrice * 0.95);
             }
 
-             
+            if (_broBizz && _vehicle.Øresund && _vehicle.Køretøj() == "Øresund Bil")
+            {
+                _finalPrice = 161;
+            }
+            
+            if (_broBizz && _vehicle.Øresund && _vehicle.Køretøj() == "Øresund MC")
+            {
+                _finalPrice = 73;
+            }
         }
     }
 }

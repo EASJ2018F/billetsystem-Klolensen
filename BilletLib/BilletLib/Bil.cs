@@ -8,17 +8,28 @@ namespace BilletLib
 {
     public class Bil : Vehicle
     {
-        public Bil(string nummerplade, DateTime dato) : base(nummerplade, dato)
+        private bool _øresund;
+
+        public Bil(string nummerplade, DateTime dato, bool øresund) : base(nummerplade, dato, øresund)
         {
+            _øresund = øresund;
         }
 
         public override int Pris()
         {
+            if (_øresund)
+            {
+                return 410;
+            }
             return 240;
         }
 
         public override string Køretøj()
         {
+            if (_øresund)
+            {
+                return "Øresund Bil";
+            }
             return "Bil";
         }
     }

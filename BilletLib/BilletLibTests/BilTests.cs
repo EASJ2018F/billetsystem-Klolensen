@@ -14,7 +14,7 @@ namespace BilletLib.Tests
         [TestMethod()]
         public void BilPrisTest()
         {
-            Bil bil = new Bil("45", new DateTime(1990, 3, 12));
+            Bil bil = new Bil("45", new DateTime(1990, 3, 12), false);
 
             int result = bil.Pris();
 
@@ -24,7 +24,7 @@ namespace BilletLib.Tests
         [TestMethod()]
         public void BilKøretøjTest()
         {
-            Bil bil = new Bil("45", new DateTime(1990, 3, 12));
+            Bil bil = new Bil("45", new DateTime(1990, 3, 12), false);
 
             string result = bil.Køretøj();
 
@@ -35,7 +35,7 @@ namespace BilletLib.Tests
         [ExpectedException(typeof(ArgumentException))]
         public void BilNummerpladeExceptionTest()
         {
-            Bil bil = new Bil("12345678", new DateTime(1990, 3, 12));
+            Bil bil = new Bil("12345678", new DateTime(1990, 3, 12), false);
         }
     }
 }
